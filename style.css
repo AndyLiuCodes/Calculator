@@ -1,0 +1,96 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+html{
+    background-color: #2A4B7C;
+}
+
+#titleContainer{
+    text-align: center;
+    padding-top: 35px;
+    padding-bottom: 35px;
+}
+
+#titleContainer label{
+    font-weight: bold;
+    font-size:  43px;
+    color: white;
+}
+
+#contentContainer{
+    text-align: center;
+}
+
+#calculatorDesign{
+    width: 500px;
+    height: 600px;
+    background-color: lightgrey;
+    display: inline-block;
+    border-radius: 7px;
+}
+
+#resultDisplay{
+    display: inline-block;
+    background-color: green;
+    width: 80%;
+    height: 75px;
+    position: relative;
+    top: 30px;
+    margin: 20px 20px;
+    border-radius: 7px;
+    border: 3px solid black;
+}
+
+#paddingDisp{
+    padding-bottom: 20px;
+}
+
+@font-face{
+    font-family: calcFont;
+    src: url(/font/digital-7.ttf);
+}
+
+#result{
+    position: relative;
+    top: 9%;
+    right: 1%;
+    float: right;
+    font-size: 70px;
+    font-family: calcFont;
+    letter-spacing: 2px;
+}
+
+#flexButtonContent{
+    position: relative;
+    flex-wrap: wrap;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.buttonStyle{
+    margin: 0.3em 0;
+    width: 97px;
+    height: 80px;
+    border-radius: 13px;
+    box-shadow: none;
+    border: solid black 0.5px;
+    background-color: darkgrey;
+    outline: 0;
+    cursor: pointer;
+}
+
+.row{
+    width: auto;
+}
+
+#clear{
+    width: 200px;
+}
+
+#zero{
+    width: 200px;
+}
