@@ -40,20 +40,20 @@ function calculatorInput(number){
 
     if(textField.textContent == "0"){
         textField.textContent = String(number);
+        expression += String(number);
         return;
     }
 
-    if(textField.textContent.length > 10){
+    if(textField.textContent.length > 17){
         alert("Exceeded max number of digits");
         return;
     }
 
     textField.textContent += String(number);
+    expression += String(number);
 }
 
-let value1 = 0;
-let value2 = 0;
-let operator = "";
+let expression = "";
 
 //Number functionality
 document.getElementById("nine").addEventListener("click", function(){
@@ -100,6 +100,7 @@ document.getElementById("zero").addEventListener("click", function(){
 document.getElementById("clear").addEventListener("click", function(){
     const textField = document.querySelector("#result");
     textField.textContent = "0";
+    expression = "";
 });
 
 
@@ -120,30 +121,44 @@ document.getElementById("decimal").addEventListener("click", function(){
     let index = searchString(textField.textContent); 
     
     if (index != false){
-        textField.textContent = textField.textContent.slice(0, index)
-        
+        textField.textContent = textField.textContent.slice(0, index) 
+                                + textField.textContent.slice(index + 1);
         return;
     }
-
     textField.textContent += ".";
 });
 
 document.getElementById("division").addEventListener("click", function(){
-
+    const textField = document.querySelector("#result");
+    textField.textContent += "÷";
+    expression += "/";
 });
 
 document.getElementById("multiply").addEventListener("click", function(){
-
+    const textField = document.querySelector("#result");
+    textField.textContent += "×";
+    expression += "*";
 });
 
 document.getElementById("subtract").addEventListener("click", function(){
-
+    const textField = document.querySelector("#result");
+    textField.textContent += "-";
+    expression += "-";
 });
 
 document.getElementById("plus").addEventListener("click", function(){
-
+    const textField = document.querySelector("#result");
+    textField.textContent += "+";
+    expression += "+";
 });
 
 document.getElementById("equal").addEventListener("click", function(){
+    const textField = document.querySelector("#result");
 
+    if(!textField.textContent[textField.textContent.length-1].match(/^[0-9a-z]+$/)){
+        alert("Invalid expression, please add another value");
+        return;
+    }
+
+    textField.textContent = eval(expression);
 });

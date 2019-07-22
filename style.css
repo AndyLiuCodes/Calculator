@@ -55,10 +55,10 @@ html{
 
 #result{
     position: relative;
-    top: 9%;
+    top: 30%;
     right: 1%;
     float: right;
-    font-size: 70px;
+    font-size: 40px;
     font-family: calcFont;
     letter-spacing: 2px;
 }
